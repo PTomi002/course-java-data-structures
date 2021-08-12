@@ -30,57 +30,64 @@ package hu.ptomi;
  * + O(n*logn)
  *
  * What is typically the most space efficient structure in Java?
- * + Linked Node based structure []
- * + Array based structure [X], because memory map of it is more efficient
+ * + Linked Node based structure    []
+ * + Array based structure          [X], because memory map of it is more efficient
  *
  * What is the Space Complexity of an ArrayList?
- * + O(1) []
- * + O(n) [X]
- * + O(logn) []
- * + O(n*logn) []
+ * + O(1)       []
+ * + O(n)       [X]
+ * + O(logn)    []
+ * + O(n*logn)  []
  *
  * What is the Space Complexity of a LinkedList?
- * + O(1) []
- * + O(n) [X]
- * + O(logn) []
- * + O(n*logn) []
+ * + O(1)       []
+ * + O(n)       [X]
+ * + O(logn)    []
+ * + O(n*logn)  []
  *
  * Which has the best Space Complexity?
- * + LinkedList []
- * + ArrayList []
- * + Array []
- * + All exactly the same [X], because others have more metadata stored, but for Big O notation that does not matter
+ * + LinkedList             []
+ * + ArrayList              []
+ * + Array                  []
+ * + All exactly the same   [X], because others have more metadata stored, but for Big O notation that does not matter
  *
  * What is the faster to traverse in a 2 dimensional int array?
- * + left -> right, top -> bottom [X]
- * + top -> bottom, left -> right []
- * + exactly the same []
+ * + left -> right, top -> bottom   [X]
+ * + top -> bottom, left -> right   []
+ * + exactly the same               []
  *
  * How many bytes does a LinkedList use to store 10_000 objects on a 64-bit machine with compressed OOPS?
  * + 10_032 bytes []
  * + 40_032 bytes []
  * + 80_032 bytes []
  * + 160_032 bytes []
- * + 240_032 bytes [X]
+ * + 240_032 bytes [X] (???: How is it calculated?)
  *
  * How many bytes does "new ArrayList<>(10_000)" use on a 64-bit machine with compressed OOPS?
- * + 10_032 bytes []
- * + 40_032 bytes [X] = 10_000 x 4 bytes per object reference (compressedOops) + 12 bytes object header + rounding
- * + 80_032 bytes []
- * + 160_032 bytes []
- * + 240_032 bytes []
+ * + 10_032 bytes   []
+ * + 40_032 bytes   [X] = 10_000 x 4 bytes per object reference (compressedOops) + 12 bytes object header + rounding
+ * + 80_032 bytes   []
+ * + 160_032 bytes  []
+ * + 240_032 bytes  []
  *
- * What it the superclass of int[]?
- * + long[]     []
- * + Object     [X]
- * + int        []
+ * What is the superclass of int[]?
+ * + long[]         []
+ * + Object         [X]
+ * + int            []
  * + none of above  []
  *
  * What is the superclass of int[][][]?
- * + int[]     []
- * + Object[]   [X]
- * + Object        []
+ * + int[]          []
+ * + Object[]       [X] (??? Why?)
+ * + Object         []
  * + none of above  []
+ *
+ * What is List derived from? (Mark all that apply)
+ * + Set            []
+ * + Iterable       [X]
+ * + Stream         []
+ * + Collection     [X]
+ * + Iterator       []
  */
 public interface QuestionsAndAnswers {
 }

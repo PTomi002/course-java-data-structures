@@ -5,7 +5,7 @@ package hu.ptomi;
  * Most compact and fastest way to store objects and primitives, memory map is a huge chunk of memory space.
  * While for linked based data structures we may hop from memory page to another, it is scattered in the memory.
  */
-public class Arrays {
+public class ArrayExamples {
     public static void main(String[] args) {
         int[] values = {1, 2, 3};
         // single-dimension array is a single object, so it has an object header which is 12 bytes
