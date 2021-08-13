@@ -126,6 +126,63 @@ package hu.ptomi;
  * + 14_000 [X], because arraylist grows by 50% so approximately (10_000 * 0,5) + 10_000
  * + 20_000 []
  *
+ * What type of iterator does ArrayList have?
+ * + Fail-Fast          [X]
+ * + Weak-Consistency   []
+ * + Snapshot           []
+ *
+ * What type of iterator was Vector's Enumeration?
+ * + Fail-Fast          []
+ * + Weak-Consistency   []
+ * + Snapshot           []
+ * + None of above      [X], because Enumeration is another interface.
+ *
+ * What is the intent of the Iterator Design Patterns in the Gang-of-Four?
+ * Provide a way to access the elements of an aggregated object sequentially without exposing its underlying representation.
+ *
+ * What is the computational time complexity to add an element to the end of a CopyOnWriteArrayList?
+ * + O(1)       []
+ * + O(logn)    []
+ * + O(n)       [X], because it copies all the N element.
+ * + O(n*n)     []
+ *
+ * What type of iterator does CopyOnWriteArrayList have?
+ * + Fail-Fast          []
+ * + Weak-Consistency   []
+ * + Snapshot           [X]
+ * + None of above      []
+ *
+ * What is the computational time complexity of sorting a CopyOnWriteArrayList since Java 8?
+ * + O(n*logn)      [X], because it is an iterative merge sort, check impl notes from JDK.
+ * + O(logn)        []
+ * + O(n)           []
+ * + O(n*n)         []
+ * + O(n*n*logn)    []
+ *
+ * What is the computational time complexity of list.remove(ThreadLocalRandom.current().nextInt(list.size()) if list is a LinkedList?
+ * + O(n*logn)      []
+ * + O(logn)        []
+ * + O(n)           [X], you have to iterate through the whole list in the worst case.
+ * + O(n*n)         []
+ * + O(n*n*logn)    []
+ *
+ * What is the computational time complexity of sorting a LinkedList?
+ * + O(n*logn)      [X], because it is an iterative merge sort, check impl notes from JDK.
+ * + O(logn)        []
+ * + O(n)           []
+ * + O(n*n)         []
+ * + O(n*n*logn)    []
+ *
+ * What type of iterator does Vector's iterator() method return?
+ * + Fail-Fast                                                                          [X]
+ * + Thread-Safe, never throwing ConcurrentModifEx., because Vector is synchronized     []
+ * + Weakly-Consistent                                                                  []
+ * + Snapshot                                                                           []
+ *
+ * What is more efficient to serialize with an ObjectOutputStream?
+ * + ArrayList  [X]
+ * + Vector     []
+ *
  */
 public interface QuestionsAndAnswers {
 }

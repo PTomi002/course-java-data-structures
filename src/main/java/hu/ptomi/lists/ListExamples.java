@@ -3,8 +3,7 @@ package hu.ptomi.lists;
 import java.util.List;
 
 /**
- * Ordered, can contain duplicates, RandomAccess = O(1) with indexes.
- * Primitives are boxed values.
+ * Ordered, can contain duplicates or even nulls, primitives are boxed values.
  */
 public class ListExamples {
     public static void main(String[] args) {

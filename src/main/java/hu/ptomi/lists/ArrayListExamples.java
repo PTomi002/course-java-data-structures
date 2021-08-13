@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 /**
- * Backed by an array.
+ * Backed by an array, use indexes, fail-fast iteration.
+ * <p>
+ * Use Case: most case.
  */
 public class ArrayListExamples {
     public static void main(String[] args) {
