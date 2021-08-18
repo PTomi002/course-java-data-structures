@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.LinkedList;
 
 /**
- * Add to the middle: you have to iterate to the middle and change the references, there are no indexes.
+ * Add to the middle: you have to iterate to the middle and change the references, there are no indexes, no need to shift elements.
  * <p>
  * Use Case: use it as a queue add/remove from the beginning/end of the list.
  * <p>

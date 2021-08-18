@@ -174,7 +174,7 @@ package hu.ptomi;
  * + O(n*n*logn)    []
  *
  * What type of iterator does Vector's iterator() method return?
- * + Fail-Fast                                                                          [X]
+ * + Fail-Fast                                                                          [X], because iterator checks this "int expectedModCount = modCount;"
  * + Thread-Safe, never throwing ConcurrentModifEx., because Vector is synchronized     []
  * + Weakly-Consistent                                                                  []
  * + Snapshot                                                                           []
@@ -183,6 +183,30 @@ package hu.ptomi;
  * + ArrayList  [X]
  * + Vector     []
  *
+ * The following code does not compile. Comparator.comparingDouble(s -> s.getAverage()).thenComparing(s -> s.getName()) What can we do to fix it? (Mark all that apply)
+ * + Use a type witness: Comparator.<Student>comparingDouble(s -> s.getAverage()).thenComparing(s -> s.getName())                       [X]
+ * + Explicitly declare lambda parameter: Comparator.comparingDouble((Student s) -> s.getAverage()).thenComparing(s -> s.getName())     [X]
+ * + Use method references: Comparator.comparingDouble(Student::getAverage).thenComparing(Student::getName)                             [X]
+ *
+ * What is the computational time complexity of sorting a LinkedList?
+ * + O(n*logn)      [X], because it is Tim sort, check impl notes from JDK.
+ * + O(logn)        []
+ * + O(n)           []
+ * + O(n*n)         []
+ * + O(n*n*logn)    []
+ *
+ * What sorting algorithm does Java use for lists?
+ * + Bubble sort    []
+ * + Merge sort     []
+ * + Quick sort     []
+ * + Tim sort       [X]
+ *
+ * What is the computational time complexity of sorting an array in parallel?
+ * + O(n*logn)      [X], divide and con uer, merge sorting
+ * + O(logn)        []
+ * + O(n)           []
+ * + O(n*n)         []
+ * + O(n*n*logn)    []
  */
 public interface QuestionsAndAnswers {
 }
