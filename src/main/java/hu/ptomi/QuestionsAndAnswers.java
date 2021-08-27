@@ -202,11 +202,61 @@ package hu.ptomi;
  * + Tim sort       [X]
  *
  * What is the computational time complexity of sorting an array in parallel?
- * + O(n*logn)      [X], divide and con uer, merge sorting
+ * + O(n*logn)      [X], divide and conquer, merge sorting
  * + O(logn)        []
  * + O(n)           []
- * + O(n*n)         []
- * + O(n*n*logn)    []
+ * + O(1)           []
+ *
+ * What is the computational time complexity for discovering if the TreeSet contains an element?
+ * + O(n*logn)      []
+ * + O(logn)        [X], as it is backed by a RB tree
+ * + O(n)           []
+ * + O(1)            []
+ *
+ * What is the computational time complexity for adding an element to a TreeSet?
+ * + O(n*logn)      []
+ * + O(logn)        [X], as it is backed by a RB tree
+ * + O(n)           []
+ * + O(1)           []
+ *
+ * What collection does TreeSet use internally to build up the red-black tree?
+ * + LinkedHashMap  []
+ * + ArrayList      []
+ * + TreeMap        [X]
+ *
+ * What is the computational time complexity for discovering if a ConcurrentSkipListSet contains an element?
+ * + O(n*logn)      []
+ * + O(logn)        [X]
+ * + O(n)           []
+ * + O(1)           []
+ *
+ * Is the ConcurrentSkipListSet thread-safe?
+ * + Yes it is, using compareAndSwap and VarHandles to ensure thread safety.    [X]
+ * + Yes it is, using synchronized to ensure thread safety.                     []
+ *
+ * In the worst case scenario, what is the space complexity of the ConcurrentSkipListSet?
+ * + O(n*logn)      [X]
+ * + O(logn)        []
+ * + O(n)           []
+ * + O(1)           []
+ *
+ * What does CopyOnWriteArraySet use to detect duplicates?
+ * + compareTo()    []
+ * + hashCode()     []
+ * + equals()       [X], because backed by a list.
+ *
+ * What is the computational time complexity of searching whether a CopyOnWriteArraySet contains an element?
+ * + O(n*logn)      []
+ * + O(logn)        []
+ * + O(n)           [X]
+ * + O(1)           []
+ *
+ * What is the computational time complexity of "new CopyOnWriteArraySet(some_other_collection)"?
+ * + O(n*logn)      []
+ * + O(logn)        []
+ * + O(n)           []
+ * + O(1)           []
+ * + O(n * n)       [X], as it is quadtratic, check if the element is in the collection then add
  */
 public interface QuestionsAndAnswers {
 }

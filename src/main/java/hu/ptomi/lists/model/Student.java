@@ -1,12 +1,15 @@
-package hu.ptomi.lists;
+package hu.ptomi.lists.model;
 
 public class Student implements Comparable<Student> {
-    private int year;
-    private String name;
+    private final int year;
+    private final String name;
+    // Extend this class during the TreeSet course.
+    private final Double average;
 
-    public Student(int year, String name) {
+    public Student(int year, String name, Double average) {
         this.year = year;
         this.name = name;
+        this.average = average;
     }
 
     public int getYear() {
@@ -31,6 +34,7 @@ public class Student implements Comparable<Student> {
         return "Student{" +
                 "year=" + year +
                 ", name='" + name + '\'' +
+                ", average=" + average +
                 '}';
     }
 }

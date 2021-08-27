@@ -1,4 +1,4 @@
-package hu.ptomi.lists;
+package hu.ptomi.lists.ths;
 
 import java.util.*;
 

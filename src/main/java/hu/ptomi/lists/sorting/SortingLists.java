@@ -1,4 +1,6 @@
-package hu.ptomi.lists;
+package hu.ptomi.lists.sorting;
+
+import hu.ptomi.lists.model.Student;
 
 import java.util.*;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -9,16 +11,17 @@ public class SortingLists {
 
     public static void main(String[] args) {
         // String: natural ordering = alphabetic order
+        // natural ordering = objects must implement comparable, primitives are OK!
         List<String> names = Arrays.asList("John", "Anton", "Tamas");
         names.sort(null);
         System.out.println(names);
 
         // Defining natural ordering for Student class.
         List<Student> students = Arrays.asList(
-                new Student(1, "John"),
-                new Student(2, "John"),
-                new Student(3, "Heinz"),
-                new Student(3, "Anton")
+                new Student(1, "John", 0.0),
+                new Student(2, "John", 0.0),
+                new Student(3, "Heinz", 0.0),
+                new Student(3, "Anton", 0.0)
         );
         students.sort(null);
         System.out.println(students);
