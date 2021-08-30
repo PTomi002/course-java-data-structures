@@ -256,7 +256,19 @@ package hu.ptomi;
  * + O(logn)        []
  * + O(n)           []
  * + O(1)           []
- * + O(n * n)       [X], as it is quadtratic, check if the element is in the collection then add
+ * + O(n * n)       [X], as it is quadtratic, check if the element is in the collection then add.
+ *
+ * What is the computational time complexity for finding an element in a hash structure if there are no bucket collisions (clashes on the hash)?
+ * + O(n*logn)      []
+ * + O(logn)        []
+ * + O(n)           []
+ * + O(1)           [X]
+ *
+ * An example of a fixed sized hash table in Java is?
+ * + java.util.Hashtable    []
+ * + java.util.HashMap      []
+ * + String constant table  [X]
+ * + ThreadLocalMap         []
  */
 public interface QuestionsAndAnswers {
 }

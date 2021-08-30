@@ -1,6 +1,6 @@
 package hu.ptomi.sets;
 
-import hu.ptomi.lists.model.Student;
+import hu.ptomi.Student;
 
 import java.lang.reflect.Field;
 import java.util.*;

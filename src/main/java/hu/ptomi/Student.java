@@ -1,4 +1,6 @@
-package hu.ptomi.lists.model;
+package hu.ptomi;
+
+import java.util.Objects;
 
 public class Student implements Comparable<Student> {
     private final int year;
@@ -19,6 +21,25 @@ public class Student implements Comparable<Student> {
     public String getName() {
         return name;
     }
+
+    public Double getAverage() {
+        return average;
+    }
+
+    // Added during hash set examples.
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Student student = (Student) o;
+        return year == student.year && Objects.equals(name, student.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(year, name);
+    }
+    // END OF: Added during hash set examples.
 
     @Override
     public int compareTo(Student o) {

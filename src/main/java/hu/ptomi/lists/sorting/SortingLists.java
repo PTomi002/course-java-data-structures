@@ -1,6 +1,6 @@
 package hu.ptomi.lists.sorting;
 
-import hu.ptomi.lists.model.Student;
+import hu.ptomi.Student;
 
 import java.util.*;
 import java.util.concurrent.CopyOnWriteArrayList;
