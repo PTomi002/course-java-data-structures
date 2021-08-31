@@ -269,6 +269,55 @@ package hu.ptomi;
  * + java.util.HashMap      []
  * + String constant table  [X]
  * + ThreadLocalMap         []
+ *
+ * Why does "new HashSet<>(IntStream.range(1, 1000).boxed().collect(Collectors.toList())).toString()" appear perfectly sorted in Java 8 and 9, but not in earlier versions?
+ * + Since Java 8, toString() adds all elements into a TreeSet and then delegates to its toString() method.     []
+ * + Integer objects have hashCodes of their own value.  Since Java 8 uses a simplified bit shifting approach
+ *      over the previous versions, for small numbers the Integer value will place a mask of the
+ *      elements in sequential buckets.                                                                         [X]
+ * + The toString() method is implemented with a Stream.collect(Collectors.joining())
+ *      and this defaults to an ordered stream since Java 8.                                                    []
+ *
+ * If we add an element to the HashSet where an equal element already exists, which one will end up in the HashSet?
+ * + The old one remains.                   [X]
+ * + The new one will eject the old value.  []
+ *
+ * In Java 8 and 9, if the type of classes in our HashSet implement Comparable, what is the worst-case computational time complexity when adding an element?
+ * + O(n*logn)      []
+ * + O(logn)        [X], because adding it can be O(n) if we use the simple Nodes, but with TreeNodes it is O(logn), see TreeSet, and assume we have all the elements in the same bucket.
+ * + O(n)           []
+ * + O(1)           []
+ *
+ * Until Java 7, what was the worst-case computation time complexity when adding an element?
+ * + O(n*logn)      []
+ * + O(logn)        []
+ * + O(n)           [X]
+ * + O(1)           []
+ *
+ * How did the Java 1.4 HashMap allocate keys to buckets?
+ *  + Using bit masking on the hashCode after shifting significant bits to the lower part of the number.    [X]
+ *  + Using the remainder operation %.                                                                      []
+ *  + Using bit masking directly on the hashCode.                                                           []
+ *
+ *  What could happen in HashMap from Java 1.2 until 7 if multiple entries pointed to the same bucket?
+ *  + A linked list was created inside the HashMap, leading to O(n) performance     [X]
+ *  + Entries were simply lost                                                      []
+ *  + A binary tree was created when too many clashes happened                      []
+ *
+ *  Since Java 8, a class HashKey used as a key in a HashMap should always implement: (Mark all that apply)
+ *  + hashCode()                                    [X]
+ *  + hashcode()                                    []
+ *  + equals()                                      [X]
+ *  + equals(HashKey)                               []
+ *  + compareTo(HashKey) and implement Comparable   [X]
+ *
+ *  Why is this not a good hash function for a Pixel class with int x and y since Java 8? public int hashCode() { return x << 16 ^ y; }
+ *  + Since the left 16 bits of the hashCode are XORed with the hashCode, we would have lots of bucket collisions, even though we have a perfect hash code.     [X]
+ *  + It is perfect.                                                                                                                                            []
+ *
+ *  How can a normal HashMap get corrupted?
+ *  + In many unexpected ways.  For example, an infinite loop can be created within the map if we add whilst the map is being resized internally.   [X]
+ *  + It is thread safe.                                                                                                                            []
  */
 public interface QuestionsAndAnswers {
 }
