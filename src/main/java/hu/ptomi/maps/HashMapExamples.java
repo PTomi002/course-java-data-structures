@@ -3,7 +3,7 @@ package hu.ptomi.maps;
 import java.util.*;
 
 /**
- * Backed by a hash table, no duplicates, identity on hashCode(...) and equals(...).
+ * Backed by a hash table, no duplicates, needs compareTo(...), equals(...) and hashCode(...). Equals and hash code comes together.
  * <p>
  * O(1) for get/check an element, worst case O(logn).
  */

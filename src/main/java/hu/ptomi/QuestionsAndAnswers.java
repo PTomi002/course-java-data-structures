@@ -318,6 +318,25 @@ package hu.ptomi;
  *  How can a normal HashMap get corrupted?
  *  + In many unexpected ways.  For example, an infinite loop can be created within the map if we add whilst the map is being resized internally.   [X]
  *  + It is thread safe.                                                                                                                            []
+ *
+ * What methods should be implemented for Key class in a TreeMap?
+ * + compareTo(Key)     [X]
+ * + equals(Object)     [X]
+ * + hashCode()         [X]
+ * + toString()         []
+ * + equals(Key)        []
+ *
+ * What is the computational time complexity of getting a value from a ConcurrentSkipListMap?
+ * + O(n*logn)      []
+ * + O(logn)        [X]
+ * + O(n)           []
+ * + O(1)           []
+ *
+ * When a lot of threads put() and get() on a Hashtable, the bottleneck is most likely going to be
+ * + Thread contention, seen by voluntary context switching [X]
+ * + The database                                           []
+ * + Memory allocation, senn in object allocation rates     []
+ * + Stop-the-World garbage collection events               []
  */
 public interface QuestionsAndAnswers {
 }
