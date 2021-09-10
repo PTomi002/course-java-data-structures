@@ -337,6 +337,86 @@ package hu.ptomi;
  * + The database                                           []
  * + Memory allocation, senn in object allocation rates     []
  * + Stop-the-World garbage collection events               []
+ *
+ * Which is true about Queues in Java? (Mark all that apply)
+ * + All Queue implementations are thread-safe                                                          []
+ * + The size() method always returns an accurate count of the number of elements in the queue          []
+ * + All Queue implementations are FIFO - first-in-first-out                                            []
+ * + Queue implementations can always be bounded in size                                                []
+ * + Queue iteration might not return elements in the same order they would be returned with poll()     [X]
+ *
+ * What concurrency mechanisms are used to ensure thread-safety in the ConcurrentLinkedQueue and ConcurrentLinkedDeque?
+ * + VarHandles are used, together with compareAndSet() and hand-over locking   [X]
+ * + Neither of these are thread-safe                                           []
+ * + All methods are synchronized                                               []
+ *
+ * What is the computational time complexity of calling size() on ConcurrentLinkedQueue?
+ * + O(n*logn)      []
+ * + O(logn)        []
+ * + O(n)           [X]
+ * + O(1)           []
+ *
+ * Iteration over a ConcurrentLinkedQueue is
+ * + snapshot           []
+ * + fail-fast          []
+ * + weakly consistent  [X], you may or may not see the changes over the queue
+ *
+ * ConcurrentLinkedDeque can be used as a thread-safe, non-blocking stack
+ * + true   [X]
+ * + false  []
+ *
+ * ConcurrentLinkedQueue can be used as a thread-safe linked list, as long as you do not need to get(index)
+ * + true   [X]
+ * + false  []
+ *
+ * Iteration over the ConcurrentLinkedQueue will return elements in the same order that poll() would return them.
+ * + true   [X]
+ * + false  []
+ *
+ * ConcurrentLinkedQueue allows offer() and poll() to be called by two threads with both succeeding.
+ * + true   [X], because the race with each other until succession
+ * + false  []
+ *
+ * Which of the following is true about the ArrayDeque? (Mark all that apply)
+ * + ArrayDeque is a circular array list type of structure                                              [X]
+ * + The internal array can be shrunk with trimToSize()                                                 []
+ * + ArrayDeque is thread-safe                                                                          []
+ * + ArrayDeque returns elements in a sorted order                                                      []
+ * + The internal array automatically shrinks when number of elements is less than 50% of array size    []
+ *
+ * What is the computational time complexity of calling poll() and offer() on an ArrayDeque?
+ * + O(n*logn)      []
+ * + O(logn)        []
+ * + O(n)           []
+ * + O(1)           [X]
+ *
+ * Which of the following is true about the LinkedBlockingQueue? (Mark all that apply)
+ * + LinkedBlockingQueue does lock splitting, with separate ReentrantLocks for the take and put actions     [X]
+ * + LinkedBlockingQueue is always unbounded                                                                []
+ * + LinkedBlockingQueue is always used as a queue in the ThreadPoolExecutor                                []
+ * + Executors.newFixedThreadPool(10) returns a ThreadPoolExecutor with an unbounded LinkedBlockingQueue    [X]
+ *
+ * How can we use a class token to create a collection that verifies at runtime that all the elements added are of the correct type?
+ * + Collections.synchronizedCollection()   []
+ * + Collections.unmodifiableCollection()   []
+ * + Collections.checkedCollection()        [X]
+ *
+ * Arrays.deepEquals() does not work for multi-dimensional primitive arrays such as int[][][], but only for Objects
+ * + true   []
+ * + false  [X]
+ *
+ * Given int[] a = {1,2,3} and int[] b = {1,2,3}, which of the following would return true?
+ * + a.equals(b)                                []
+ * + b.equals(a)                                []
+ * + Arrays.equals(a, b)                        [X]
+ * + Arrays.deepEquals(a, b)                    []
+ * + Arrays.hashCode(a) == Arrays.hashCode(b)   [X]
+ *
+ * What is the computational complexity of sorting a very large short[]?
+ * + O(n*logn)      []
+ * + O(logn)        []
+ * + O(n)           [X]
+ * + O(1)           []
  */
 public interface QuestionsAndAnswers {
 }
